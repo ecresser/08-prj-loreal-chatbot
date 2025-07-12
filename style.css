@@ -1,16 +1,55 @@
+/* L'Oréal Essentielle font for site title */
+@font-face {
+  font-family: "Loreal Essentielle";
+  src: url("fonts/loreal-essentielle.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 /* —— basic reset —— */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Message bubbles for chat */
+/* iMessage-style message bubbles */
+/* iMessage-style message bubbles */
+.msg {
+  display: block;
+  max-width: 65%;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  word-break: break-word;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+  position: relative;
 }
 
-/* —— body + fonts —— */
-body {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  color: #333;
-  display: flex;
-  justify-content: center;
+/* User message bubble: right side, black text, light background */
+/* User bubble: right, gray, like iMessage */
+/* User bubble: right, white */
+.msg.user {
+  color: #000;
+  background: #fff;
+  margin-left: auto;
+  margin-right: 8px;
+  text-align: left;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+/* Assistant message bubble: left side, gold text, white background */
+/* Assistant bubble: left, gold text, white bubble */
+/* Assistant bubble: left, light grey */
+.msg.ai {
+  color: #e3a535;
+  background: #f3f3f6;
+  margin-right: auto;
+  margin-left: 8px;
+  text-align: left;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 .page-wrapper {
@@ -24,10 +63,14 @@ body {
   padding-top: 50px;
 }
 
+/* Use L'Oréal Essentielle for site title */
 .site-title {
+  font-family: "Avant Garde Gothic ITC W02 Med", "Montserrat", Arial, Helvetica,
+    sans-serif;
   font-size: 22px;
   font-weight: 500;
   margin-bottom: 10px;
+  font-style: normal;
 }
 
 /* chat window */
@@ -35,15 +78,25 @@ body {
   margin: 40px 0;
 }
 
+/* Chat window: iMessage look */
+/* Chat window: slightly darker grey, centered, wider */
 .chat-window {
   height: 360px;
-  border: 1px solid #000;
-  padding: 20px;
-  font-size: 18px;
-  line-height: 1.5;
+  width: 100%;
+  max-width: 1800px;
+  border: 1px solid #e5e5ea;
+  padding: 16px 10px;
+  font-size: 16px;
+  line-height: 1.4;
   overflow-y: auto;
-  background: #fafafa;
+  background: #e2e2e6;
   white-space: pre-line;
+  font-family: "Halesworth eText Medium", "Montserrat", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 }
 
 /* messages */
@@ -52,12 +105,14 @@ body {
   line-height: 1.5;
 }
 
+/* User messages in black */
 .msg.user {
   color: #000;
 }
 
+/* Chatbot messages in #E3A535 */
 .msg.ai {
-  color: #666666;
+  color: #e3a535;
 }
 
 /* input row */
@@ -72,6 +127,7 @@ body {
   padding: 12px;
   border: 1px solid #ccc;
   font-size: 18px;
+  font-style: italic;
 }
 
 .chat-form input:focus {
@@ -81,7 +137,7 @@ body {
 
 .chat-form button {
   font-size: 18px;
-  background: #000;
+  background: #ff003b;
   color: #fff;
   border: none;
   padding: 12px;
@@ -96,10 +152,11 @@ body {
 
 .chat-form button .material-icons {
   font-size: 24px;
+  color: #fff;
 }
 
 .chat-form button:hover {
-  background: #666666;
+  background: #c8002e;
 }
 
 .chat-form button:focus {
@@ -121,23 +178,80 @@ body {
 }
 
 /* footer */
-.site-footer {
-  margin: 60px 0 40px;
-  text-align: center;
-  font-size: 14px;
-  color: #666;
+
+/* Center page content */
+.page-wrapper {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.site-footer nav {
-  margin-top: 12px;
+/* Center chat area */
+.chatbox {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.site-footer a {
-  margin: 0 8px;
+/* Chat window: slightly darker grey, centered */
+  height: 360px;
+  width: 100%;
+  max-width: 700px;
+  border: 1px solid #e5e5ea;
+  padding: 16px 10px;
+  font-size: 16px;
+  line-height: 1.4;
+  overflow-y: auto;
+  background: #e2e2e6;
+  white-space: pre-line;
+  font-family: "Halesworth eText Medium", "Montserrat", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Center message bubbles */
+.msg {
+  display: block;
+  max-width: 65%;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  word-break: break-word;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+  position: relative;
+  align-self: center;
+}
+
+/* User bubble: right, white */
+.msg.user {
   color: #000;
-  text-decoration: none;
+  background: #fff;
+  margin-left: auto;
+  margin-right: 8px;
+  text-align: left;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
-.site-footer a:hover {
-  color: #666666;
+/* Assistant bubble: left, light grey */
+.msg.ai {
+  color: #e3a535;
+  background: #f3f3f6;
+  margin-right: auto;
+  margin-left: 8px;
+  text-align: left;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
